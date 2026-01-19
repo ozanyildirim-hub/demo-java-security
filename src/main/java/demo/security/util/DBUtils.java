@@ -15,6 +15,10 @@ public class DBUtils {
 
     public List<String> findUsers(String user) throws Exception {
         String query = "SELECT userid FROM users WHERE username = '" + user  + "'";
+        
+        // Log SQL query execution
+        LoggingUtil.logSqlQuery(query);
+        
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
         List<String> users = new ArrayList<String>();
@@ -26,6 +30,10 @@ public class DBUtils {
 
     public List<String> findItem(String itemId) throws Exception {
         String query = "SELECT item_id FROM items WHERE item_id = '" + itemId  + "'";
+        
+        // Log SQL query execution
+        LoggingUtil.logSqlQuery(query);
+        
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
         List<String> items = new ArrayList<String>();
