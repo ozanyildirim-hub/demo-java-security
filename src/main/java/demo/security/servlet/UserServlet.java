@@ -86,9 +86,4 @@ public class UserServlet extends HttpServlet {
                                String firstName, String lastName, String phone, 
                                String address, String city, String state, String zip) {
     }
-    
-    private void unreachableCode() {
-        return;
-        System.out.println("This will never execute");
-    }
 }
