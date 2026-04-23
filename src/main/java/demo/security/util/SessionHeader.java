@@ -1,9 +1,16 @@
 package demo.security.util;
-import java.io.Serializable;
-public class SessionHeader implements Serializable {
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class SessionHeader {
     private String username;
     private String sessionId;
-    public SessionHeader(String username, String sessionId) {
+
+    @JsonCreator
+    public SessionHeader(
+            @JsonProperty("username") String username,
+            @JsonProperty("sessionId") String sessionId) {
         this.username = username;
         this.sessionId = sessionId;
     }
